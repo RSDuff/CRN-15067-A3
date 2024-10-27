@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'Urbanist';
+    src: url('../fonts/Urbanist-VariableFont_wght.ttf');
+}
+
+:root{
+    /* Color scheme */
+    --primary-color: #A2C7E5;
+    --accent-color: #DF2935;
+    --text-color: #303A2B;
+    --background-color: #F2FDFF;
+    --header-background: #C1BDDB;
+    --footer-background: #C1BDDB;
+    --footer-text-color: ##303A2B;
+    /* Typography */
+    --font-family: Urbanist;
+    --font-size-base: 18px;
+    --font-size-heading: 24px;
+    --font-weight-regular: 500;
+    --font-weight-bold: 900;
+    /* Spacing */
+    --spacing-unit: 10px;
+    /* Transitions */
+    --transition-duration: 0.5s;
+    --scale: 1;
+    --scale-hover: 1.1;
+}
+
+body{
+    background-color: var(--background-color);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    margin:0;
+    padding:0;
+}
+
+header {
+    display: flex;
+    background-color: var(--header-background);
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-unit);
+
+}
+
+.logo img{
+    width: 60px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-unit);
+}
+
+nav ul li a{
+    display: inline-block;
+    text-decoration: none;   
+    font-weight: var(--font-weight-bold);
+    color: var(--accent-color);
+    transform: scale(var(--scale));
+    transition: color var(--transition-duration) ease,transform var(--transition-duration) ease;
+}
+
+nav ul li a:hover{
+    color: var(--primary-color);
+    transform: scale(var(--scale-hover));
+}
+
+main {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: var(--spacing-unit);
+}
+section {
+    margin-bottom: calc(var(--spacing-unit)*4);
+}
+
+h2 {
+    font-size: var(--font-size-heading);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 0;
+}
+
+p {
+    font-size: var(--font-size-base);
+    line-height: 1;
+}
+
+.skills ul {
+    list-style: square;
+    margin-left : var(--spacing-unit);
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: calc(var(--spacing-unit)*3);
+    justify-content: space-evenly;
+}
+
+.projectCard{
+    width: 600px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transform: scale(var(--scale));
+    transition: all var(--transition-duration) ease;
+    text-decoration: none !important;
+    color: var(--text-color);
+}
+
+.projectCard:hover{
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transform: scale(var(--scale-hover));
+}
+
+.projectCard img{
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    object-position: center;
+}
+
+.projectCard h3, .projectCard p {
+    padding: var(--spacing-unit);
+}
+
+.contact form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.contact form input , .contact form textarea{
+    border: 1px solid var(--accent-color);
+    padding: var(--spacing-unit);
+}
+
+.contact form input:focus , .contact form textarea:focus{
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.button{
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: var(--spacing-unit);
+    margin: var(--spacing-unit);
+    cursor: pointer;
+    font-weight: var(--font-weight-bold);
+    transition: background-color 0.4s;
+}
+
+.button:hover{
+    background-color: var(--primary-color);
+}
+
+footer{
+    text-align: center;
+    background-color: var(--footer-background);
+    padding: var(--spacing-unit);
+    font-weight: var(--font-weight-bold);
+}
+
+footer p{
+    color: var(--footer-text-color);
+}
